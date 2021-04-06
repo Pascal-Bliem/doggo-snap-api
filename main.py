@@ -15,6 +15,7 @@ logger = logging.getLogger(__name__)
 model_config = json.load(open("./config/modelConfig.json", "r"))
 ch_norm = model_config["channelNormalization"]
 img_size = model_config["imageSize"]
+model_version = model_config["modelVersion"]
 class_map = json.load(open("./config/classMap.json", "r"))
 logger.info("Config loaded")
 
@@ -28,7 +29,7 @@ logger.info("FastAPI initialized")
 # the route for classifying a dog breed from an image
 
 
-@app.post("/classify_dog_breed")
+@app.post("/v1/classify_dog_breed")
 async def classify_dog_breed(
         image: bytes = File(...),
         topN: int = Form(...),
@@ -59,7 +60,7 @@ async def classify_dog_breed(
     ]
 
     # return predictions
-    return {"predictions": result}
+    return {"predictions": result, "modelVersion": model_version}
 
 # health check route
 
