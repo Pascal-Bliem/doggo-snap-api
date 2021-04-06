@@ -1,2 +1,3 @@
-# doggo-snap-api
-A rest API backend for the DoggoSnap mobile app.
+# Doggo Snap API
+
+An API backend for the DoggoSnap mobile app, written with FastAPI, hosted on Heroku.

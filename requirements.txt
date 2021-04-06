@@ -1,0 +1,8 @@
+pillow==8.2.0
+numpy==1.19.2 
+onnx==1.8.1 
+onnxruntime==1.7.0 
+fastapi==0.63.0
+uvicorn==0.12.3 
+python-multipart==0.0.5
+aiofiles==0.6.0
