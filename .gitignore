@@ -1,9 +1,6 @@
 # code editor
 .vscode/
 
-# machine learning models
-model/*.onnx
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
