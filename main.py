@@ -5,6 +5,7 @@ import onnxruntime as ort
 from PIL import Image
 import json
 from fastapi import FastAPI, File, Form
+from fastapi.middleware.cors import CORSMiddleware
 
 # get logger
 logging.basicConfig(
@@ -25,6 +26,13 @@ logger.info("ONNX-Runtime inference session loaded")
 
 # initialize FastAPI
 app = FastAPI()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 logger.info("FastAPI initialized")
 # the route for classifying a dog breed from an image
 

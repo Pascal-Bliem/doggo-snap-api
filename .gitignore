@@ -1,3 +1,6 @@
+# ignore large ML model
+model/dog_classifier.onnx
+
 # code editor
 .vscode/
 
